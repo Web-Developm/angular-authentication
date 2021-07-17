@@ -1,0 +1,22 @@
+<mat-toolbar color="primary">
+  <span>Authentication</span>
+
+  <a routerLink="/login">
+    <button class="btn">Home</button>
+  </a>
+
+  <a routerLink="/expense">
+    <button class="btn">Report</button>
+  </a>
+
+  <div *ngIf="isUserLoggedIn; else isLogout">
+    <a routerLink='/logout' class="btn">Logout</a>
+  </div>
+
+  <ng-template #isLogout class="btn">
+    <a routerLink="/login">Login</a>
+  </ng-template>
+
+</mat-toolbar>
+
+<router-outlet></router-outlet>
